@@ -1,6 +1,6 @@
 ﻿namespace OutpostBackend.Core.Entities
 {
-    public class Community
+    public class Category
     {
     }
 }
