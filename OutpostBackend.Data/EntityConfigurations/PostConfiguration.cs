@@ -20,15 +20,15 @@ namespace OutpostBackend.Data.EntityConfigurations
                 new Post
                 {
                     Id = 1,
-                    Title = "Sample Title 1",
+                    Title = "City Post Title",
                     Body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim iaculis ex, ut venenatis elit efficitur vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut laoreet venenatis fermentum.",
                     Published = DateTime.Now,
-                    CategoryId = 1
+                    CategoryId = 3
                 },
                 new Post
                 {
                     Id = 2,
-                    Title = "Sample Title 2",
+                    Title = "Movie Post Title",
                     Body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim iaculis ex, ut venenatis elit efficitur vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut laoreet venenatis fermentum.",
                     Published = DateTime.Now,
                     CategoryId = 1
@@ -36,26 +36,26 @@ namespace OutpostBackend.Data.EntityConfigurations
                 new Post
                 {
                     Id = 3,
-                    Title = "Sample Title 3",
+                    Title = "Game Post Title",
                     Body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim iaculis ex, ut venenatis elit efficitur vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut laoreet venenatis fermentum.",
                     Published = DateTime.Now,
-                    CategoryId = 1
+                    CategoryId = 5
                 },
                 new Post
                 {
                     Id = 4,
-                    Title = "Sample Title 4",
+                    Title = "Game Post Title",
                     Body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim iaculis ex, ut venenatis elit efficitur vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut laoreet venenatis fermentum.",
                     Published = DateTime.Now,
-                    CategoryId = 1
+                    CategoryId = 5
                 },
                 new Post
                 {
                     Id = 5,
-                    Title = "Sample Title 5",
+                    Title = "Plant Post Title",
                     Body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim iaculis ex, ut venenatis elit efficitur vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut laoreet venenatis fermentum.",
                     Published = DateTime.Now,
-                    CategoryId = 1
+                    CategoryId = 4
                 },
             };
 
