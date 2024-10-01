@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using OutpostBackend.Core.Entities;
 using System.Reflection;
 
 namespace OutpostBackend.Data
@@ -8,6 +9,9 @@ namespace OutpostBackend.Data
         public OutpostDbContext(DbContextOptions options) : base(options)
         {
         }
+
+        public DbSet<Category> Categories { get; set; } = default!;
+        public DbSet<Post> Posts { get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

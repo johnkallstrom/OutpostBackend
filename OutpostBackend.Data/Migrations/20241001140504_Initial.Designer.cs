@@ -12,7 +12,7 @@ using OutpostBackend.Data;
 namespace OutpostBackend.Data.Migrations
 {
     [DbContext(typeof(OutpostDbContext))]
-    [Migration("20240930125051_Initial")]
+    [Migration("20241001140504_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -39,7 +39,7 @@ namespace OutpostBackend.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Category");
+                    b.ToTable("Categories");
 
                     b.HasData(
                         new
@@ -95,7 +95,7 @@ namespace OutpostBackend.Data.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Post");
+                    b.ToTable("Posts");
 
                     b.HasData(
                         new
@@ -103,7 +103,7 @@ namespace OutpostBackend.Data.Migrations
                             Id = 1,
                             Body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim iaculis ex, ut venenatis elit efficitur vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut laoreet venenatis fermentum.",
                             CategoryId = 3,
-                            Published = new DateTime(2024, 9, 30, 14, 50, 51, 615, DateTimeKind.Local).AddTicks(5559),
+                            Published = new DateTime(2024, 10, 1, 16, 5, 4, 43, DateTimeKind.Local).AddTicks(5199),
                             Title = "City Post Title"
                         },
                         new
@@ -111,7 +111,7 @@ namespace OutpostBackend.Data.Migrations
                             Id = 2,
                             Body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim iaculis ex, ut venenatis elit efficitur vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut laoreet venenatis fermentum.",
                             CategoryId = 1,
-                            Published = new DateTime(2024, 9, 30, 14, 50, 51, 615, DateTimeKind.Local).AddTicks(5624),
+                            Published = new DateTime(2024, 10, 1, 16, 5, 4, 43, DateTimeKind.Local).AddTicks(5259),
                             Title = "Movie Post Title"
                         },
                         new
@@ -119,7 +119,7 @@ namespace OutpostBackend.Data.Migrations
                             Id = 3,
                             Body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim iaculis ex, ut venenatis elit efficitur vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut laoreet venenatis fermentum.",
                             CategoryId = 5,
-                            Published = new DateTime(2024, 9, 30, 14, 50, 51, 615, DateTimeKind.Local).AddTicks(5627),
+                            Published = new DateTime(2024, 10, 1, 16, 5, 4, 43, DateTimeKind.Local).AddTicks(5262),
                             Title = "Game Post Title"
                         },
                         new
@@ -127,7 +127,7 @@ namespace OutpostBackend.Data.Migrations
                             Id = 4,
                             Body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim iaculis ex, ut venenatis elit efficitur vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut laoreet venenatis fermentum.",
                             CategoryId = 5,
-                            Published = new DateTime(2024, 9, 30, 14, 50, 51, 615, DateTimeKind.Local).AddTicks(5629),
+                            Published = new DateTime(2024, 10, 1, 16, 5, 4, 43, DateTimeKind.Local).AddTicks(5264),
                             Title = "Game Post Title"
                         },
                         new
@@ -135,7 +135,7 @@ namespace OutpostBackend.Data.Migrations
                             Id = 5,
                             Body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim iaculis ex, ut venenatis elit efficitur vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut laoreet venenatis fermentum.",
                             CategoryId = 4,
-                            Published = new DateTime(2024, 9, 30, 14, 50, 51, 615, DateTimeKind.Local).AddTicks(5632),
+                            Published = new DateTime(2024, 10, 1, 16, 5, 4, 43, DateTimeKind.Local).AddTicks(5266),
                             Title = "Plant Post Title"
                         });
                 });

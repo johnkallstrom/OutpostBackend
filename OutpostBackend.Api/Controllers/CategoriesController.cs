@@ -1,4 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using OutpostBackend.Core.Entities;
+using OutpostBackend.Core.Interfaces;
+using OutpostBackend.Data;
 
 namespace OutpostBackend.Api.Controllers
 {
@@ -6,10 +10,19 @@ namespace OutpostBackend.Api.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
+        private readonly IGenericService<Category> _categoryService;
+
+        public CategoriesController(IGenericService<Category> categoryService)
+        {
+            _categoryService = categoryService;
+        }
+
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok();
+            var categories = await _categoryService.GetListAsync();
+
+            return Ok(categories);
         }
 
         [HttpGet("{id}")]

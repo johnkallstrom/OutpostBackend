@@ -14,7 +14,7 @@ namespace OutpostBackend.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Category",
+                name: "Categories",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -23,11 +23,11 @@ namespace OutpostBackend.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Category", x => x.Id);
+                    table.PrimaryKey("PK_Categories", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Post",
+                name: "Posts",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -39,17 +39,17 @@ namespace OutpostBackend.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Post", x => x.Id);
+                    table.PrimaryKey("PK_Posts", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Post_Category_CategoryId",
+                        name: "FK_Posts_Categories_CategoryId",
                         column: x => x.CategoryId,
-                        principalTable: "Category",
+                        principalTable: "Categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
-                table: "Category",
+                table: "Categories",
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
@@ -61,20 +61,20 @@ namespace OutpostBackend.Data.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Post",
+                table: "Posts",
                 columns: new[] { "Id", "Body", "CategoryId", "Published", "Title" },
                 values: new object[,]
                 {
-                    { 1, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim iaculis ex, ut venenatis elit efficitur vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut laoreet venenatis fermentum.", 3, new DateTime(2024, 9, 30, 14, 50, 51, 615, DateTimeKind.Local).AddTicks(5559), "City Post Title" },
-                    { 2, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim iaculis ex, ut venenatis elit efficitur vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut laoreet venenatis fermentum.", 1, new DateTime(2024, 9, 30, 14, 50, 51, 615, DateTimeKind.Local).AddTicks(5624), "Movie Post Title" },
-                    { 3, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim iaculis ex, ut venenatis elit efficitur vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut laoreet venenatis fermentum.", 5, new DateTime(2024, 9, 30, 14, 50, 51, 615, DateTimeKind.Local).AddTicks(5627), "Game Post Title" },
-                    { 4, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim iaculis ex, ut venenatis elit efficitur vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut laoreet venenatis fermentum.", 5, new DateTime(2024, 9, 30, 14, 50, 51, 615, DateTimeKind.Local).AddTicks(5629), "Game Post Title" },
-                    { 5, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim iaculis ex, ut venenatis elit efficitur vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut laoreet venenatis fermentum.", 4, new DateTime(2024, 9, 30, 14, 50, 51, 615, DateTimeKind.Local).AddTicks(5632), "Plant Post Title" }
+                    { 1, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim iaculis ex, ut venenatis elit efficitur vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut laoreet venenatis fermentum.", 3, new DateTime(2024, 10, 1, 16, 5, 4, 43, DateTimeKind.Local).AddTicks(5199), "City Post Title" },
+                    { 2, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim iaculis ex, ut venenatis elit efficitur vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut laoreet venenatis fermentum.", 1, new DateTime(2024, 10, 1, 16, 5, 4, 43, DateTimeKind.Local).AddTicks(5259), "Movie Post Title" },
+                    { 3, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim iaculis ex, ut venenatis elit efficitur vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut laoreet venenatis fermentum.", 5, new DateTime(2024, 10, 1, 16, 5, 4, 43, DateTimeKind.Local).AddTicks(5262), "Game Post Title" },
+                    { 4, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim iaculis ex, ut venenatis elit efficitur vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut laoreet venenatis fermentum.", 5, new DateTime(2024, 10, 1, 16, 5, 4, 43, DateTimeKind.Local).AddTicks(5264), "Game Post Title" },
+                    { 5, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim iaculis ex, ut venenatis elit efficitur vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut laoreet venenatis fermentum.", 4, new DateTime(2024, 10, 1, 16, 5, 4, 43, DateTimeKind.Local).AddTicks(5266), "Plant Post Title" }
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Post_CategoryId",
-                table: "Post",
+                name: "IX_Posts_CategoryId",
+                table: "Posts",
                 column: "CategoryId");
         }
 
@@ -82,10 +82,10 @@ namespace OutpostBackend.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Post");
+                name: "Posts");
 
             migrationBuilder.DropTable(
-                name: "Category");
+                name: "Categories");
         }
     }
 }
