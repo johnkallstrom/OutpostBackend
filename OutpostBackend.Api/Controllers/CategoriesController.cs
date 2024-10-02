@@ -20,11 +20,5 @@ namespace OutpostBackend.Api.Controllers
             var categories = await _categoryService.GetCategoriesAsync();
             return Ok(categories);
         }
-
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
-        {
-            return Ok();
-        }
     }
 }
