@@ -1,4 +1,6 @@
+using OutpostBackend.Api.Services;
 using OutpostBackend.Core;
+using OutpostBackend.Core.Interfaces;
 using OutpostBackend.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCoreServices();
 builder.Services.AddDataServices(builder.Configuration);
+
+builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 var app = builder.Build();
 
