@@ -16,6 +16,13 @@ builder.Services.AddDataServices(builder.Configuration);
 builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 
+builder.Services.AddCors(options => options.AddDefaultPolicy(builder =>
+{
+    builder.AllowAnyHeader();
+    builder.AllowAnyMethod();
+    builder.AllowAnyOrigin();
+}));
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -23,6 +30,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors();
 
 app.MapControllers();
 app.Run();
