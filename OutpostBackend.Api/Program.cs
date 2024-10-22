@@ -15,6 +15,7 @@ builder.Services.AddDataServices(builder.Configuration);
 
 builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IPostService, PostService>();
 
 builder.Services.AddCors(options => options.AddDefaultPolicy(builder =>
 {

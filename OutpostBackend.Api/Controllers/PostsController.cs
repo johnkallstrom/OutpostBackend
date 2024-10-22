@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OutpostBackend.Core.Interfaces;
 
 namespace OutpostBackend.Api.Controllers
 {
@@ -6,10 +7,18 @@ namespace OutpostBackend.Api.Controllers
     [ApiController]
     public class PostsController : ControllerBase
     {
+        private readonly IPostService _postService;
+
+        public PostsController(IPostService postService)
+        {
+            _postService = postService;
+        }
+
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok();
+            var posts = await _postService.GetPostsAsync();
+            return Ok(posts);
         }
 
         [HttpGet("{id}")]

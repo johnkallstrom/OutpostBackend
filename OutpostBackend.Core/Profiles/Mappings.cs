@@ -12,6 +12,7 @@ namespace OutpostBackend.Api.Profiles
             CreateMap<Category, CategoryDto>();
 
             // Posts
+            CreateMap<Post, PostDto>();
         }
     }
 }
